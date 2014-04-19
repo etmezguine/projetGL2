@@ -2,7 +2,7 @@ package controller.user;
 
 public class Admin extends Utilisateur {
 	
-	//test commitdfdf le pull va enfin marcher
+	//serialisation des donnees
 	
 	private static final long serialVersionUID = 1555922979417139347L;
 
