@@ -23,11 +23,16 @@ public class LoginController {
 	}
 	
 	public void connect() {
+		// on recupere les ids
 		String login = loginView.getLogin();
 		String pass = loginView.getPass();
+		// on recupere l'user
 		Utilisateur u = Factory.getInstance().getUtilisateurFactory().getUser(login);
 		if (u != null && u.getPass().equals(pass)) {
+			// on libere la fenetre
 			loginView.dispose();
+			loginView = null;
+			// On lance le controlleur correspondant a l'utilisateur
 			if (u instanceof Eleve) {
 				new EleveController();
 			} else if (u instanceof Prof) {
@@ -35,6 +40,7 @@ public class LoginController {
 			} else if (u instanceof Admin) {
 				new AdminController();
 			} else {
+				// Ne devrait pas arriver, mais dans le doute
 				System.exit(0);
 			}
 		} else {
