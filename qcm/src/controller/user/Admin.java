@@ -3,6 +3,7 @@ package controller.user;
 public class Admin extends Utilisateur {
 	
 	//serialisation des donnees, test pull pour johan
+	// test pcommiut
 	
 	private static final long serialVersionUID = 1555922979417139347L;
 
