@@ -12,7 +12,7 @@ public class Factory implements Serializable {
 	
 	private static final long serialVersionUID = -8172806973776677150L;
 	
-	private static final String PATH = "save/factory";
+	private static final String PATH = "factory";
 	
 	private static Factory instance;
 	
