@@ -22,7 +22,7 @@ public class LoginController {
 		loginView.setVisible(true);
 	}
 	
-	public void connect() {
+	public void connect() throws IOException, BadLocationException {
 		// on recupere les ids
 		String login = loginView.getLogin();
 		String pass = loginView.getPass();

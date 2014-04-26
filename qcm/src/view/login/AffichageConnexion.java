@@ -22,7 +22,15 @@ public class AffichageConnexion extends JFrame {
 	ActionListener actionListener1 = new ActionListener() {
 		@Override
 		public void actionPerformed(final ActionEvent actionEvent) {
-			loginController.connect();
+			try {
+				loginController.connect();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (BadLocationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	};
 	
