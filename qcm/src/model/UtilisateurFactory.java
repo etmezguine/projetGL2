@@ -18,9 +18,11 @@ public class UtilisateurFactory implements Serializable {
 	private Map<String, Admin> admins;
 	
 	public UtilisateurFactory() {
+		
 		eleves = new TreeMap<>();
 		profs = new TreeMap<>();
 		admins = new TreeMap<>();
+		
 		admins.put("admin", new Admin("jean", "robert", "admin", "pass"));
 		profs.put("prof", new Prof("dupont", "martin","prof","pass"));
 		eleves.put("eleve", new Eleve("Julie", "larousse", "eleve", "pass", Promotion.CPI2));

@@ -17,9 +17,11 @@ public class Factory implements Serializable {
 	private static Factory instance;
 	
 	private final UtilisateurFactory uf;
+	private final QuestionnaireFactory qf;
 	
 	private Factory() {
 		uf =  new UtilisateurFactory();
+		qf = new QuestionnaireFactory();
 	}
 
 	public static void init() {
