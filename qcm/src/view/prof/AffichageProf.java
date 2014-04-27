@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.text.BadLocationException;
 
 import controller.LoginController;
+import controller.ProfController;
 
 import view.login.AffichageConnexion;
 
@@ -36,19 +37,7 @@ public class AffichageProf extends JFrame {
 	ActionListener actionListener3 = new ActionListener() {
 		@Override
 		public void actionPerformed(final ActionEvent actionEvent) {
-			dispose();
-			JFrame win;
-			try {
-				win = new AffichageConnexion(loginController);
-				win.setVisible(true);
-			} catch (final IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (final BadLocationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
+			profController.disconnect();
 		}
 
 	};
@@ -61,9 +50,10 @@ public class AffichageProf extends JFrame {
 
 	JLabel label1;
 	
-	private LoginController loginController;
+	private ProfController profController;
 
-	public AffichageProf() throws IOException, BadLocationException {
+	public AffichageProf(ProfController profController) throws IOException, BadLocationException {
+		this.profController = profController;
 		this.setLayout(new FlowLayout(FlowLayout.CENTER, 700, 50));
 		this.setSize(1600, 900);
 		this.setTitle("Projet Génie Logiciel 2");

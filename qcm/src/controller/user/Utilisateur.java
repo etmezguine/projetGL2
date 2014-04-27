@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 public abstract class Utilisateur implements Serializable {
 	
-
 	private static final long serialVersionUID = -5934732439562702312L;
-	
 	
 	private final String prenom;
 	private final String nom;

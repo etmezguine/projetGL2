@@ -11,7 +11,7 @@ public class Qcm {
 		return listeQuestions;
 	}
 
-	public Qcm (final ArrayList<Question> listeQuestions){
+	public Qcm (final ArrayList<Question> listeQuestions) {
 		this.listeQuestions = listeQuestions;
 	}
 	

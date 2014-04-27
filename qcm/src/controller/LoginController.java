@@ -16,8 +16,26 @@ import view.login.AffichageConnexion;
 public class LoginController {
 	
 	private AffichageConnexion loginView;
+	private static LoginController instance;
 	
-	public LoginController() throws IOException, BadLocationException {
+	public static LoginController getInstance() {
+		if (instance == null) {
+			try {
+				instance = new LoginController();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (BadLocationException e) {
+				e.printStackTrace();
+			}
+		}
+		return instance;
+	}
+	
+	private LoginController() throws IOException, BadLocationException {
+		login();
+	}
+	
+	public void login() throws IOException, BadLocationException {
 		loginView = new AffichageConnexion(this);
 		loginView.setVisible(true);
 	}

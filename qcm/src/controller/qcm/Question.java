@@ -8,20 +8,19 @@ public class Question {
 	private final ArrayList<Reponse> listeReponses;
 	
 
-	public Question(final String libelle,final ArrayList<Reponse> listeReponses) {
+	public Question(final String libelle, final ArrayList<Reponse> listeReponses) {
 		
 		this.libelle = libelle;
 		this.listeReponses = listeReponses;
 		
 	}
 
-
 	public String getLibelle() {
 		return libelle;
 	}
 
-
 	public ArrayList<Reponse> getListeReponses() {
 		return listeReponses;
 	}
+	
 }
