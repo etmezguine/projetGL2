@@ -13,17 +13,25 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.text.BadLocationException;
 
-import controller.LoginController;
 import controller.ProfController;
 
-import view.login.AffichageConnexion;
+
 
 public class AffichageProf extends JFrame {
 	private static final long serialVersionUID = 1L;
 	ActionListener actionListener1 = new ActionListener() {
 		@Override
 		public void actionPerformed(final ActionEvent actionEvent) {
-			AffichageProf.this.button1.setVisible(false);
+			button1.setText("Creer QCM");
+			button2.setText("Modifier / Supprimer QCM");
+			button3.setText("Retour");
+			
+			button3.removeActionListener(actionListener3);
+			button1.removeActionListener(actionListener1);
+			
+			button3.addActionListener(actionListener4);
+			button1.addActionListener(actionListener5);
+			
 			repaint();
 		}
 	};
@@ -41,6 +49,36 @@ public class AffichageProf extends JFrame {
 		}
 
 	};
+	ActionListener actionListener4 = new ActionListener() {
+		@Override
+		public void actionPerformed(final ActionEvent actionEvent) {
+			button1.setText("Gerer QCM");
+			button2.setText("Gerer Session");
+			button3.setText("Se deconnecter");
+			
+			button3.removeActionListener(actionListener4);
+			button3.addActionListener(actionListener3);
+			
+			button1.removeActionListener(actionListener5);
+			button1.addActionListener(actionListener1);
+			repaint();
+		}
+	};
+	ActionListener actionListener5 = new ActionListener() {
+		@Override
+		public void actionPerformed(final ActionEvent actionEvent) {
+			dispose();
+			try {
+				AffichageSaisieQuestion win = new AffichageSaisieQuestion();
+				win.setVisible(true);
+			} catch (IOException | BadLocationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+	}; 
+	
 
 	JButton button1;
 

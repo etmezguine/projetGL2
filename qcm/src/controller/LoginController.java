@@ -12,6 +12,7 @@ import controller.user.Utilisateur;
 import model.Factory;
 
 import view.login.AffichageConnexion;
+import view.prof.AffichageSaisieQuestion;
 
 public class LoginController {
 	
@@ -54,7 +55,9 @@ public class LoginController {
 			if (u instanceof Eleve) {
 				new EleveController();
 			} else if (u instanceof Prof) {
-				new ProfController();
+				//new ProfController();
+				AffichageSaisieQuestion win = new AffichageSaisieQuestion();
+				win.setVisible(true);
 			} else if (u instanceof Admin) {
 				new AdminController();
 			} else {
