@@ -17,5 +17,7 @@ public class Reponse {
 	public boolean isBonneReponse() {
 		return bonneReponse;
 	}
+	
+
 
 }

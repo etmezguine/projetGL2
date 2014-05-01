@@ -1,56 +1,42 @@
 package controller.qcm;
 
 
+import java.awt.Color;
+import java.awt.Font;
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JLabel;
 
 public class Qcm {
 	
-	private final ArrayList<Question> listeQuestions;
+	private final List<Question> listeQuestions;
 	
-	public ArrayList<Question> getListeQuestion() {
+	public List<Question> getListeQuestion() {
 		return listeQuestions;
 	}
 
-	public Qcm (final ArrayList<Question> listeQuestions) {
+	public Qcm (final List<Question> listeQuestions) {
 		this.listeQuestions = listeQuestions;
 	}
 	
-	public /*Qcm*/void CreerQcm (int nbQuestions) {
-		//Declaration des variables
-		//QCM
-		Qcm qcmCreer;
-		ArrayList<Question> listeQuestions;
-		//Question
-		String libelleQuestion;
-		ArrayList<Reponse> listeReponses;
-		//Reponse
-		String libelleReponse;
-		boolean bonneReponse;
-		
-		
-		//Boucle de creation des questions
-		for (int i=0; i < nbQuestions; ++i) {
-			//Saisie libelleQuestion
-			
-			//Boucle de creation des reponses
-			for (int j=0; j < 4; ++j) {
-				//Saisie du libelleReponse
-				
-				//Saisie bonneReponse
-				
-				//Ajout de la reponse a la liste des reponses possibles
-				//listeReponses.add(new Reponse(libelleReponse, bonneReponse));
+	public int verifAjoutQuestion(Question questionAjoutee){
+		int verifAjout = 1;
+		if (!questionAjoutee.getLibelle().equals("")){
+			if (questionAjoutee.questionValide() == 0){
+				this.listeQuestions.add(questionAjoutee);
+				verifAjout = 0;
 			}
-			
-			//Ajout de la question a la liste des questions du QCM
-			//listeQuestions.add(new Question(libelleQuestion, listeReponses));
+
 		}
 		
-		//Creation du qcm par appel du constructeur
-		//qcmCreer = new Qcm(listeQuestions);
+		return verifAjout;
 		
-		
-		//return (qcmCreer);
 	}
+	
+	public void removeQuestion(int index){
+		this.listeQuestions.remove(index);
+	}
+		
 
 }
