@@ -12,7 +12,7 @@ import controller.user.Utilisateur;
 import model.Factory;
 
 import view.login.AffichageConnexion;
-import view.prof.AffichageSaisieQuestion;
+import view.prof.AffichageSaisieQcm;
 
 public class LoginController {
 	
@@ -56,7 +56,7 @@ public class LoginController {
 				new EleveController();
 			} else if (u instanceof Prof) {
 				//new ProfController();
-				AffichageSaisieQuestion win = new AffichageSaisieQuestion();
+				AffichageSaisieQcm win = new AffichageSaisieQcm();
 				win.setVisible(true);
 			} else if (u instanceof Admin) {
 				new AdminController();
