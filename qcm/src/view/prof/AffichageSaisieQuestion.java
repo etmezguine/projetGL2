@@ -143,7 +143,7 @@ public class AffichageSaisieQuestion extends JFrame {
 	ActionListener actionListener6 = new ActionListener() {
 		@Override
 		public void actionPerformed(final ActionEvent actionEvent) {
-			if (qcmSaisie.getListeQuestion().size() > 1){
+			if (qcmSaisie.getListeQuestion().size() > 0){
 				//ajouter le qcm a factory 
 				dispose();
 				try {
@@ -285,7 +285,7 @@ public class AffichageSaisieQuestion extends JFrame {
 		this.button2.addActionListener(this.actionListener3);
 		this.button6.addActionListener(this.actionListener4);
 		this.button5.addActionListener(this.actionListener5);
-		
+		this.button1.addActionListener(this.actionListener6);
 		
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
