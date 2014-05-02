@@ -69,7 +69,7 @@ public class AffichageProf extends JFrame {
 		public void actionPerformed(final ActionEvent actionEvent) {
 			dispose();
 			try {
-				AffichageSaisieQuestion win = new AffichageSaisieQuestion();
+				AffichageSaisieQcm win = new AffichageSaisieQcm();
 				win.setVisible(true);
 			} catch (IOException | BadLocationException e) {
 				// TODO Auto-generated catch block
