@@ -70,6 +70,10 @@ public class Factory implements Serializable {
 	public UtilisateurFactory getUtilisateurFactory() {
 		return uf;
 	}
+	
+	public QuestionnaireFactory getQuestionnaireFactory(){
+		return qf;
+	}
 
 	public static void save() {
 		write(instance);
